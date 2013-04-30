@@ -29,7 +29,21 @@ class Welcome extends CI_Controller
 									velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
 									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 		$data['articles']		= $a;
-
+		if(!$this->uri->segment(1))
+		{
+			$data['content'] = "partials/home";
+		}
+		
+		$this->parser->parse('templates/main_template', $data);
+		
+	}
+	
+	public function view_article()
+	{
+		$data['title'] 		= 'CodeIgniter Partials';
+		$data['heading'] 	= "This is the article title";
+		$data['article'] 	= "article content here";
+		$data['content'] 	= "partials/_article_viewer";
 		$this->parser->parse('templates/main_template', $data);
 	}
 }

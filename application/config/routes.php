@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['view_article'] = "welcome/view_article";
 
 
 /* End of file routes.php */
